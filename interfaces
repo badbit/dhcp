@@ -1,5 +1,6 @@
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
+# La ubicación de este archivo es /etc/network/interfaces
 
 # The loopback network interface
 auto lo
