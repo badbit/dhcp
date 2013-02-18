@@ -1,27 +1,40 @@
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
-# La ubicación de este archivo es /etc/network/interfaces
 
 # The loopback network interface
 auto lo
 iface lo inet loopback
 
-# WAN - Internet
+#mapping hotplug
+#	script grep
+#	map eth1 eth1
+
+# The primary network interface
+#auto eth0
+#iface eth0 inet dhcp
+
 auto eth0
 iface eth0 inet static
-address 10.10.10.13
-netmask 255.255.255.0
-broadcast 10.10.10.255
-gateway 10.10.10.10
-dns-domain lan
-dns-nameservrs 8.8.8.8 8.8.4.4
+	address 10.10.10.11
+	netmask 255.255.255.0
+	network 10.10.10.0
+	broadcast 10.10.10.255
+	gateway 10.10.10.10
+	# dns-* options are implemented by the resolvconf package, if installed
+	dns-nameservers 8.8.8.8 8.8.4.4
+	dns-search dhcp.com
 
-# LAN - Servidor DHCP
 auto eth1
 iface eth1 inet static
-address 192.168.10.1
-netmask 255.255.255.0
-broadcast 192.168.10.255
-gateway 10.10.10.10
-dns-domain lan
-dns-nameservrs 8.8.8.8 8.8.4.4
+	address 192.168.10.1
+	netmask 255.255.255.0
+	network 192.168.10.0
+	broadcast 192.168.10.255
+	gateway 10.10.10.10
+	dns-nameservers 10.10.10.10
+#	dns-nameservers 8.8.8.8 8.8.4.4
+
+#iface br0 inet static
+#	bridge_ports eth0 eth1
+#	address 192.168.10.1
+#	netmask 255.255.255.0
