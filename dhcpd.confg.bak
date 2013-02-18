@@ -1,0 +1,134 @@
+#
+#   Configuración del servidor DHCP
+#   Este archivo debe ir ubicado en /etc/dhcp3/dhcp.conf
+#
+ddns-update-style none;
+ignore client-updates;
+
+lease-file-name "/var/lib/dhcpd/dhcpd.leases";
+authoritative;                                   # Este es el único servidor DHCP en la escuela.
+
+option domain-name                      "dhcp.net";
+default-lease-time                      86400;   # 24 horas
+max-lease-time                          172800;  # 48 horas
+
+subnet 192.168.10.0 netmask 255.255.255.0 {
+        option routers                  192.168.10.1;
+        option subnet-mask              255.255.255.0;
+        option broadcast-address        192.168.10.255;
+        option domain-name-servers      192.168.1.1;
+        option ntp-servers              192.168.1.1;
+        option netbios-name-servers     192.168.1.1;
+        option netbios-node-type        8;
+        range   192.168.10.101   192.168.10.200;
+}
+
+host recepcion {			# Computadora de secretaria.
+	hardware ethernet 00:08:74:A5:68:24;
+	fixed-address 192.168.10.2;
+}
+
+host escolar {				# Computadora de Elda.
+	hardware ethernet
+	fixed-address 192.168.10.3;
+}
+
+host prefectura {			# Computadora de Raquel.
+	hardware ethernet 00:12:79:AC:44:39;
+	fixed-address 192.168.10.4;
+}
+
+host subdireccion {			# Computadora de Samuel.
+	hardware ethernet
+	fixed-address 192.168.10.5;
+}
+
+host direccion {			# Computadora de Laura.
+	hardware ethernet
+	fixed-address 192.168.10.6;
+}
+
+host contabilidad {			# Computadora de Memo.
+	hardware ethernet
+	fixed-address 192.168.10.7;
+}
+
+host imacg3 {				# Computadora de Miguel (iMac G3)
+	hardware ethernet 00:30:65:45:69:24;
+	fixed-address 192.168.10.8;
+}
+
+host labpatria1 {			# Primera computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.9;
+}
+
+host labpatria2 {			# Segunda computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.10;
+}
+
+host labpatria3 {			# Tercera computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.11;
+}
+
+host labpatria4 {			# Cuarta computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.12;
+}
+
+host labpatria5 {			# Quinta computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.13;
+}
+
+host labpatria6 {			# Sexta computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.14;
+}
+
+host labpatria7 {			# Séptima computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.15;
+}
+
+host labpatria8 {			# Octava computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.16;
+}
+
+host labpatria9 {			# Novena computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.17;
+}
+
+host labpatria10 {			# Décima computadora del laboratorio.
+	hardware ethernet
+	fixed-address 192.168.10.18;
+}
+
+host labpatria11 {
+	hardware ethernet
+	fixed-address 192.168.10.19
+}
+
+host labpatria12 {
+	hardware ethernet
+	fixed-address 192.168.10.20
+}
+
+host labpatria13 {
+	hardware ethernet
+	fixed-address 192.168.10.30
+}
+
+host labpatria14 {
+	hardware ethernet
+	fixed-address 192.168.10.31
+}
+
+host labpatria15 {
+	hardware ethernet
+	fixed-address 192.168.10.32
+}
