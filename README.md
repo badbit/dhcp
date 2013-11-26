@@ -11,6 +11,9 @@ Ubicación de los archivos
 =========================
 
 /etc/dhcp/dhcpd.conf
+
 /etc/interfaces
+
 sudo iptables-restore < iptables.sav
+
 /etc/default/isc-dhcp-server
