@@ -12,7 +12,7 @@ Ubicación de los archivos
 
 /etc/dhcp/dhcpd.conf
 
-/etc/interfaces
+/etc/network/interfaces
 
 sudo iptables-restore < iptables.sav
 
