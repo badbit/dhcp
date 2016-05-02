@@ -7,6 +7,8 @@ El servidor tiene dos interfases. Una se conecta a la WAN a través de una anten
 
 Las primeras direcciones son estáticas, para máquinas de escritorio de la escuela. El resto son dinámicas para los estudiantes y maestros que llevan sus laptops, celulares, tablets y otros dispositivos.
 
+sudo apt install isc-dhcp-server
+
 Ubicación de los archivos
 =========================
 
